@@ -1,7 +1,7 @@
 import React from 'react';
 import ConnectedComponent from './connected-component';
 
-type BaseType = Promise<any>
+type BaseType = () => Promise<any>
 
 interface Props {
 	view: BaseType,

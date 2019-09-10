@@ -4,6 +4,6 @@
 import Loadable from '../lib/loadable';
 
 export default Loadable({
-  view: import(/* webpackChunkName: "Reducer" */'./views'),
-  reducer: import(/* webpackChunkName: "Reducer" */'./reducer'),
+  view: () => import(/* webpackChunkName: "Reducer" */'./views'),
+  reducer: () => import(/* webpackChunkName: "Reducer" */'./reducer'),
 });

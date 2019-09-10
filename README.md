@@ -28,11 +28,11 @@ import {Loadable}  from '@fay-react/react-redux-loadable';
 
 export default Loadable({
   /*required*/
-  view: import(/* webpackChunkName: "test", webpackPrefetch: true */'./views'),
+  view: () => import(/* webpackChunkName: "test", webpackPrefetch: true */'./views'),
   /*not required*/
-  reducer: import(/* webpackChunkName: "test", webpackPrefetch: true */'./reducer'),
+  reducer: () => import(/* webpackChunkName: "test", webpackPrefetch: true */'./reducer'),
   /*not required*/
-  saga: import(/* webpackChunkName: "test", webpackPrefetch: true */'./saga'),
+  saga: () => import(/* webpackChunkName: "test", webpackPrefetch: true */'./saga'),
 });
 //views、reducer、saga need export default
 ```

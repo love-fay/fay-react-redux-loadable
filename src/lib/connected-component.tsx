@@ -39,9 +39,9 @@ export default ({reducer, saga, view, viewProps}:any) => {
   const [component, setComponent] = React.useState(unConnectedComponent);
 
   React.useEffect(() => {
-    const promises = [view];
-    reducer && promises.push(reducer);
-    saga && promises.push(saga);
+    const promises = [view()];
+    reducer && promises.push(reducer());
+    saga && promises.push(saga());
     Promise.all(promises).then((values) => {
       const [_view, _reducer, _saga] = values;
       setComponent(connectedComponent({view: _view.default, reducer: _reducer && _reducer.default, saga: _saga && _saga.default, viewProps}));
