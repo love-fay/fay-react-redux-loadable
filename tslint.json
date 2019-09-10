@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "@fay-react/tool/config/typescript/tslint-rules.json",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "jsx-no-lambda": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.{j,t}s",
+      "**/node_modules/**/*.{j,t}s"
+    ]
+  }
+}

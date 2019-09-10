@@ -1,0 +1,74 @@
+{
+  "name": "@fay-react/react-redux-loadable",
+  "version": "0.0.1-alpha.1",
+  "description": "fay react redux loadable",
+  "scripts": {
+    "start": "node_modules/.bin/webpack-cli serve --config node_modules/@fay-react/tool/config/webpack/default/webpack.config.js --color --progress",
+    "build": "node_modules/.bin/webpack-cli --config node_modules/@fay-react/tool/config/webpack/default/webpack.pro.config.js --color --progress",
+    "pub:clear": "rm -rf pub",
+    "pub:tsc": "node_modules/.bin/tsc",
+    "pub:babel": "export NODE_ENV='production' && node_modules/.bin/babel pub --out-dir pub --copy-files",
+    "pub:pre": "npm run pub:clear && npm run pub:tsc && npm run pub:babel && cp package.json pub && cp README.md pub",
+    "pub": "npm run pub:pre && cd pub && npm publish --access=public && cd .. && npm run pub:clear",
+    "ts:fix": "node_modules/.bin/tslint --fix \"lib/**/*.ts\" \"lib/**/*.tsx\"",
+    "ts:lint": "node_modules/.bin/tslint \"lib/**/*.ts\" \"lib/**/*.tsx\""
+  },
+  "private": false,
+  "keywords": [
+    "react",
+    "fay",
+    "fay-react",
+    "frontend",
+    "loadable",
+    "react-loadable",
+    "redux-loadable",
+    "react-redux-loadable",
+    "react-redux",
+    "redux"
+  ],
+  "contributors": [
+    "love-fay"
+  ],
+  "bugs": {
+    "url": "https://github.com/love-fay/fay-react-redux-loadable/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/love-fay/fay-react-redux-loadable"
+  },
+  "main": "index.tsx",
+  "module": "*",
+  "files": [
+    "*"
+  ],
+  "email": "869770665@qq.com",
+  "author": "fay",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@fay-react/tool": "0.0.1-alpha.28",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "webpack-dev-server": "^3.8.0",
+    "prop-types": "15.7.2"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.2",
+    "@types/redux-immutable-state-invariant": "^2.1.1",
+    "@types/redux-logger": "^3.0.7",
+    "react-redux": "7.1.0",
+    "redux": "4.0.4",
+    "redux-immutable-state-invariant": "2.1.0",
+    "redux-logger": "3.0.6",
+    "redux-saga": "1.0.5"
+  },
+  "devEngines": {
+    "node": "8.x || 9.x"
+  }
+}
