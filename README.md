@@ -24,14 +24,14 @@ render(
 ```
 
 ```javascript
-import {Loadable, Provider}  from '@fay-react/react-redux-loadable';
+import {Loadable}  from '@fay-react/react-redux-loadable';
 
 export default Loadable({
   /*required*/
-  view: import(/* webpackChunkName: "test" */'./views'),
+  view: import(/* webpackChunkName: "test", webpackPrefetch: true */'./views'),
   /*not required*/
-  reducer: import(/* webpackChunkName: "test" */'./reducer'),
+  reducer: import(/* webpackChunkName: "test", webpackPrefetch: true */'./reducer'),
   /*not required*/
-  sagas: import(/* webpackChunkName: "test" */'./sagas'),
+  sagas: import(/* webpackChunkName: "test", webpackPrefetch: true */'./sagas'),
 });
 ```
