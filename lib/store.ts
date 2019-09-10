@@ -81,5 +81,5 @@ export default function initStore(initReducer={}, reduxMiddlewares:Array<Middlew
 	(win && win.__REDUX_DEVTOOLS_EXTENSION__) ? win.__REDUX_DEVTOOLS_EXTENSION__() : (f:any) => f,
 	);
 	const store = createStore(createReducer(initReducer), storeEnhancers);
-	return {...store, asyncReducers: {}, asyncSagas: {}, sagaMiddleware};
+	return {...store, asyncReducers: initReducer, asyncSagas: {}, sagaMiddleware};
 }

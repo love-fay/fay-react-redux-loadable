@@ -1,6 +1,6 @@
 {
   "name": "@fay-react/react-redux-loadable",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.5",
   "description": "fay react redux loadable",
   "scripts": {
     "start": "node_modules/.bin/webpack-cli serve --config node_modules/@fay-react/tool/config/webpack/default/webpack.config.js --color --progress",
