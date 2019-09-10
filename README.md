@@ -32,6 +32,7 @@ export default Loadable({
   /*not required*/
   reducer: import(/* webpackChunkName: "test", webpackPrefetch: true */'./reducer'),
   /*not required*/
-  sagas: import(/* webpackChunkName: "test", webpackPrefetch: true */'./sagas'),
+  saga: import(/* webpackChunkName: "test", webpackPrefetch: true */'./saga'),
 });
+//views、reducer、saga need export default
 ```
