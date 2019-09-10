@@ -1,4 +1,4 @@
-import {applyMiddleware, compose, createStore} from 'redux';
+import {applyMiddleware, compose, createStore, Middleware} from 'redux';
 import { createLogger } from 'redux-logger';
 const logger = createLogger();
 import createSagaMiddleware from 'redux-saga';
@@ -65,10 +65,10 @@ function rejectAsyncReducers(store: any, asyncReducers: any) {
 }
 
 
-export default function initStore(initReducer={}, reduxMiddlewares=[]) {
+export default function initStore(initReducer={}, reduxMiddlewares:Array<Middleware<any, any, any>>) {
 	const sagaMiddleware = createSagaMiddleware();
 
-	const middlewares:any = [...reduxMiddlewares, sagaMiddleware];
+	const middlewares:Array<Middleware<any, any, any>> = [...reduxMiddlewares, sagaMiddleware];
 
 	if (process.env.NODE_ENV !== 'production') {
 		import(/* webpackChunkName: "redux-immutable-state-invariant" */'redux-immutable-state-invariant').then(

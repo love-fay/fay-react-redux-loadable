@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {Provider} from 'react-redux';
+import {Middleware} from "redux";
 import ErrorBoundary from './error/errorBoundary';
 import LoadableContext from './loadableContext';
 import initStore from './store';
@@ -10,14 +11,14 @@ import initStore from './store';
 interface Props {
 	children: any,
 	initReducer?: object,
-	reduxMiddlewares?: [],
+	reduxMiddlewares?: Array<Middleware<any, any, any>>,
 	loadingBoundary?: any,
 	errorBoundary?: any
 }
 
 const defaultLoading = <div>loading...</div>;
 
-export default ({children, initReducer, reduxMiddlewares, loadingBoundary=defaultLoading, errorBoundary=ErrorBoundary}: Props) => {
+export default ({children, initReducer, reduxMiddlewares=[], loadingBoundary=defaultLoading, errorBoundary=ErrorBoundary}: Props) => {
 	const store = initStore(initReducer, reduxMiddlewares);
 	return (
 		<Provider store={store}>
